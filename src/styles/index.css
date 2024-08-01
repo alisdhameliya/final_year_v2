@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /* overflow: hidden; */
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    line-height: normal;
+    font-family: inherit;
+    margin: unset;
+}
+a {
+    text-decoration: none;
+    display: block;
+}
+input {
+    background-color: transparent;
+    width: 100%;
+}   
+
+input:focus {
+    outline: none;
+}
+.tab-panel--selected {
+    animation-name: tabPanel;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+}
+@keyframes tabPanel {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+table {
+    /* table-layout: fixed; */
+    border-radius: 10px;
+    width: 100%;
+    }
+    
+    table td{
+    border-bottom: 0.3px solid #6b6b6b44;
+    padding: 8px 0 8px 14px;
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+}
+::-webkit-scrollbar-track {
+background: transparent;
+}
+::-webkit-scrollbar-thumb {
+background: #6b6b6b;
+border-radius: 10px;
+}
+
+.bg-color{
+    background-color: rgba(21, 115, 255, 0.374)!important;
+    z-index: 1000;
+}
+
+/* .ps-menu-icon {
+width: unset !important;
+min-width: unset !important;
+justify-content: start !important;
+margin: 0 !important;
+} */
+/* .ps-menu-button,
+.ps-menu-icon {
+height: unset !important;
+}
+.ps-menu-button:hover {
+background-color: unset !important;
+}
+.ps-sidebar-container,
+.ps-submenu-content {
+background-color: transparent !important;
+overflow: unset;
+}
+.ps-collapsed .ps-menu-icon {
+min-width: 100% !important;
+justify-content: center !important;
+}
+.ps-collapsed {
+width: 80px !important;
+}
+ */
+/* General Styles for Sidebar and Menu Containers */
+/* .ps-sidebar-container,
+.ps-menu-root,
+.ps-menu-root > ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+} */
+
+/* Sidebar Root Styles */
+.ps-sidebar-root {
+    min-width: unset !important;
+    border: none !important;
+}
+
+/* Collapsed Sidebar and Menu Styles */
+/* .ps-collapsed,
+.ps-collapsed.ps-menu-root,
+.ps-collapsed.ps-menu-button {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: unset !important;
+    margin-right: unset !important;
+} */
+
+.ps-collapsed ul {
+    align-items: center;
+} */
+
+/* Menu Label Styles */
+.ps-menu-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Custom Scrollbar Style for Sidebar Container */
+.ps-sidebar-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+      
