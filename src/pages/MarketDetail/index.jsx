@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import Text from "../../components/Text"; import Img from "../../components/Img"; import Heading from "../../components/Heading"; import Button from "../../components/Button";
 import Header from "../../components/Header";
 import MarketDetailProductcard from "../../components/MarketDetailProductcard";
-import MarketDetailRowcreatorone from "../../components/MarketDetailRowcreatorone";
+import MarketDetailRowcreatorone from "../../components/MarketDetailRowcreatorOne";
 import Sidebar from "../../components/Sidebar";
 import React, { Suspense } from "react";
 import { GoHeartFill } from "react-icons/go";
