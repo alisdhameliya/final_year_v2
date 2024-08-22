@@ -13,6 +13,8 @@ import { AiFillAppstore, AiOutlineAppstore } from "react-icons/ai";
 import { IoWalletOutline } from "react-icons/io5";
 import { BsClockHistory } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import Button from '../Button';
+import { logout } from '../../config/firebase';
 
 
 function Sidebar1({ ...props }) {
@@ -26,7 +28,7 @@ function Sidebar1({ ...props }) {
             collapsed={collapsed}
             className={`${props.className} flex flex-col h-screen top-0  pl-[16px] pt-[16px] pr-[5px] border-gray-100 border-r border-solid bg-gray-50 Isticky overflow-auto md:hidden"`}
         >
-            <Img src="images/img_logo.png" alt="logo" className="ml-4 mt-4 h-[56px] w-[70%] object-cover md:ml-3" />
+            <Img src={props.userImage ? URL.createObjectURL(props.userImage) : "images/user-128.svg"} alt="logo" className="ml-4 mt-4 h-[56px] w-[56px] rounded-full object-cover md:ml-3 bg-zinc-100" />
             <Text size="s" className=" ml-4 mt-[50px] tracking-[0.12px] [text-black-900 md:ml-3">
                 GENERAL
             </Text>
@@ -102,6 +104,7 @@ function Sidebar1({ ...props }) {
                 <Heading size="md" as="h6" className="mt-4 tracking-[0.18px] ! text-white-A700">
                     Help Center
                 </Heading>
+                <button onClick={() => logout()}>sign out</button>
                 <div className="flex flex-col items-center gap-2 self-stretch pt-2.5">
                     <Text
                         className="w-[80%] text-center !font-normal leading-[180%] tracking-[0.14px] !text-gray-400 md:w-full">

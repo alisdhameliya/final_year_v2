@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Helmet } from "react-helmet";
 // import { Text, Button, Img, Switch, Input, TextArea, Heading } from "../../components";
 import Text from '../../components/Text';
@@ -28,6 +29,7 @@ const notificationSettingsList = [
 ];
 
 export default function SettingsPage() {
+    const [image, setImage] = useState(false)
     return (
         <>
             <Helmet>
@@ -35,7 +37,7 @@ export default function SettingsPage() {
                 <meta name="description" content="Web site created using create-react-app" />
             </Helmet>
             <div className="flex items-start w-full bg-white-A700 h-screen">
-                <Sidebar />
+                <Sidebar userImage={image} />
                 <div className="mb-[34px] flex flex-1 flex-col self-center gap-[34px] h-screen Isticky overflow-auto">
                     <Header className="mt-4" />
                     <div className="flex flex-col gap-[30px] mx-[34px]">
@@ -203,7 +205,7 @@ export default function SettingsPage() {
                                     <div className="mx-6 flex flex-col gap-6 md:mx-0">
                                         <div className="flex items-center gap-4">
                                             <Img
-                                                src="images/img_ellipse_1020.png"
+                                                src={image ? URL.createObjectURL(image) : "/img_ellipse_1020.png"}
                                                 alt="Profile Image"
                                                 className="h-[64px] w-[64px] rounded-[32px] object-cover"
                                             />
@@ -217,13 +219,17 @@ export default function SettingsPage() {
                                                     </Heading>
                                                     <Heading as="p" className="font-outfit font-normal tracking-[0.14px] text-red-600">
                                                         Update
+
                                                     </Heading>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="flex flex-col items-center gap-4 rounded-[14px] border-[0.75px] border-dashed border-gray-600 bg-white-a700 p-3.5">
-                                            <Button color="gray_50" size="5xl" shape="circle" className="w-[48px] rounded-[24px]">
-                                                <LuUploadCloud className=" text-xl text-zinc-400" />
+                                        <div className="flex flex-col items-center gap-4 rounded-[14px] border-[0.75px] border-dashed border-gray-600 bg-white-a700 p-3.5 relative">
+                                            <input type="file" onChange={(e) => setImage(e.target.files[0])} className="opacity-0 bg-red-50 absolute h-full w-full" accept=" .JPG, .JPEG, .png, .PNG  " />
+                                            <Button color="gray_50" size="5xl" shape="circle" className="w-[48px] rounded-[24px] ">
+
+                                                <LuUploadCloud className="  text-xl text-zinc-400" />
+
                                             </Button>
                                             <div className="flex w-[80%] flex-col items-center gap-2">
                                                 <Heading as="p" className="tracking-[0.14px] text-gray-900_01 text-sm">
